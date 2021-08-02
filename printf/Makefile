@@ -6,7 +6,7 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/28 17:52:53 by vbaron            #+#    #+#              #
-#    Updated: 2021/08/01 16:41:05 by vbaron           ###   ########.fr        #
+#    Updated: 2021/08/02 10:39:04 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,17 +33,17 @@ all:		${NAME}
 			${CC} ${FLAGS} -c $< -o ${<:.c=.o} -I${INCLUDES}
 
 ${NAME}: 	${OBJS}
-			make -C Libft
-			cp Libft/libft.a ./$(NAME)
+			# make -C Libft
+			# cp Libft/libft.a ./$(NAME)
 			ar -rcs ${NAME} ${OBJS}
 
 clean:
 			rm -f ${OBJS}
-			make clean -C Libft
+			# make clean -C Libft
 
 fclean: 	clean
 			rm -f ${NAME}
-			make fclean -C Libft
+			# make fclean -C Libft
 
 re: 		fclean all
 

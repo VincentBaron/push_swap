@@ -6,7 +6,7 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/30 17:56:46 by vbaron            #+#    #+#              #
-#    Updated: 2021/08/01 17:09:38 by vbaron           ###   ########.fr        #
+#    Updated: 2021/08/02 16:03:36 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ SOURCES = program_main.c \
 		create_stacks.c \
 		sa_sb_ss_operations.c \
 		do_operation.c \
+		ra_rb_rr_operations.c \
+		rra_rrb_rrr_operations.c \
 
 		
 
