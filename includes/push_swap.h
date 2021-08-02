@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:47:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/02 16:23:19 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/02 16:57:06 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef struct s_stack
 typedef struct s_general
 {
     int stack_length;
+    int stack_a_len;
+    int stack_b_len;
     t_stack *stack_a;
     t_stack *stack_b;
     char *op_string;

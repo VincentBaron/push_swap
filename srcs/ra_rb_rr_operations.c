@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:51:41 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/02 15:15:17 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/02 17:07:58 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,24 @@
 
 void ra_operation(t_general *mother)
 {
-    t_content *temp;
-    t_list *head;
-    
-    head = mother->stack_a;
-    temp = mother->stack_a->content;
-    if (head->next)
-    {
-        while (head->next != NULL)
-            head = head->next;
-        mother->stack_a->content = head->content;
-        head->content = temp;
-    }
+    t_stack temp;
+
+    if (mother->stack_a_len < 2)
+        return;
+    temp = mother->stack_a[0];
+    mother->stack_a[0] = mother->stack_a[mother->stack_a_len - 1];
+    mother->stack_a[mother->stack_a_len - 1] = temp;
 }
 
 void rb_operation(t_general *mother)
 {
-    t_content *temp;
-    t_list *head;
-    
-    head = mother->stack_b;
-    temp = mother->stack_b->content;
-    if (mother->stack_b->next)
-    {
-        while (head->next != NULL)
-            head = head->next;
-        mother->stack_b->content = head->content;
-        head->content = temp;
-    }
+    t_stack temp;
+
+    if (mother->stack_b_len < 2)
+        return;
+    temp = mother->stack_b[0];
+    mother->stack_b[0] = mother->stack_b[mother->stack_b_len - 1];
+    mother->stack_b[mother->stack_b_len - 1] = temp;
 }
 
 void rr_operation(t_general *mother)
