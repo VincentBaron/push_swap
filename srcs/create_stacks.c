@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 14:16:35 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/02 16:24:18 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/02 16:35:55 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int create_stacks(t_general *mother, char **av)
     j = 0;
     while (i <= mother->stack_length)
     {
-        mother->stack_a[j].data = av[i];
+        mother->stack_a[j].data = ft_atoi(av[i]);
         mother->stack_a[j].is_full = 1;
         mother->stack_b[j].is_full = 0;
         j++;
