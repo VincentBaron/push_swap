@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 14:19:28 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/02 16:57:59 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/03 15:30:46 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,34 @@
 
 void sa_operation(t_general *mother)
 {
-    t_stack temp;
+    int temp;
 
-    if (mother->stack_a_len < 2)
+    ft_printf("sa\n\n");
+    if (mother->stack_a.len < 2)
         return;
-    temp = mother->stack_a[0];
-    mother->stack_a[0] = mother->stack_a[1];
-    mother->stack_a[1] = temp;
+    temp = mother->stack_a.data[0];
+    mother->stack_a.data[0] = mother->stack_a.data[1];
+    mother->stack_a.data[1] = temp;
+    display_stacks(mother);
 }
 
 void sb_operation(t_general *mother)
 {
-       t_stack temp;
+    int temp;
 
-    if (mother->stack_b_len < 2)
+    ft_printf("sa\n\n");
+    if (mother->stack_b.len < 2)
         return;
-    temp = mother->stack_b[0];
-    mother->stack_b[0] = mother->stack_b[1];
-    mother->stack_b[1] = temp;
+    temp = mother->stack_b.data[0];
+    mother->stack_b.data[0] = mother->stack_b.data[1];
+    mother->stack_b.data[1] = temp;
+    display_stacks(mother);
 }
 
 void ss_operation(t_general *mother)
 {
+    ft_printf("ss\n\n");
     sa_operation(mother);
     sb_operation(mother);
+    display_stacks(mother);
 }

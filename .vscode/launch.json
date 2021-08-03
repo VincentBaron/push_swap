@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "/Users/vbaron/Desktop/push_swap_repo/push_swap",
-            "args": ["1", "2", "3", "5"],
+            "args": ["2", "3" , "1", "4", "5"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

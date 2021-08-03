@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 15:57:19 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/02 17:46:36 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/03 15:03:53 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,43 +15,51 @@
 void rra_operation(t_general *mother)
 {
     int i;
-    t_stack last;
-    t_stack temp;
-    
-    if (mother->stack_a_len < 2)
+    int last;
+    int temp;
+
+
+    ft_printf("rra\n\n");
+    if (mother->stack_a.len < 2)
         return;
-    i = mother->stack_a_len - 1;
-    last = mother->stack_a[mother->stack_a_len - 1];
+    i = mother->stack_a.len - 1;
+    last = mother->stack_a.data[mother->stack_a.len - 1];
     while (i > 0)
     {
-        temp = mother->stack_a[i];
-        mother->stack_a[i] = mother->stack_a[i - 1];
+        temp = mother->stack_a.data[i];
+        mother->stack_a.data[i] = mother->stack_a.data[i - 1];
         i--;
     }
-    mother->stack_a[i] = last;
+    mother->stack_a.data[i] = last;
+    display_stacks(mother);
 }
 
 void rrb_operation(t_general *mother)
 {
     int i;
-    t_stack last;
-    t_stack temp;
-    
-    if (mother->stack_b_len < 2)
+    int last;
+    int temp;
+
+
+    ft_printf("rra\n\n");
+    if (mother->stack_b.len < 2)
         return;
-    i = mother->stack_b_len - 1;
-    last = mother->stack_b[mother->stack_b_len - 1];
+    i = mother->stack_b.len - 1;
+    last = mother->stack_b.data[mother->stack_b.len - 1];
     while (i > 0)
     {
-        temp = mother->stack_b[i];
-        mother->stack_b[i] = mother->stack_b[i - 1];
+        temp = mother->stack_b.data[i];
+        mother->stack_b.data[i] = mother->stack_b.data[i - 1];
         i--;
     }
-    mother->stack_b[i] = last;
+    mother->stack_b.data[i] = last;
+    display_stacks(mother);
 }
 
 void rrr_operation(t_general *mother)
 {
+    ft_printf("rrr\n\n");
     rra_operation(mother);
     rrb_operation(mother);
+    display_stacks(mother);
 }

@@ -6,7 +6,7 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/30 17:56:46 by vbaron            #+#    #+#              #
-#    Updated: 2021/08/02 17:07:41 by vbaron           ###   ########.fr        #
+#    Updated: 2021/08/03 18:50:50 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,13 @@ SOURCES = program_main.c \
 		display_stacks.c \
 		create_stacks.c \
 		sa_sb_ss_operations.c \
-		do_operation.c \
 		ra_rb_rr_operations.c \
 		rra_rrb_rrr_operations.c \
+		pa_pb_operations.c \
+		less_than_three.c \
+		utils.c \
+		calculate_pos.c \
+		less_than_five.c \
 
 		
 

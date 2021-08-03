@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 14:26:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/02 16:49:07 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/03 14:57:09 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,17 @@ void display_stacks(t_general *mother)
     // ft_printf("stack length: %d\n\n",mother->stack_length);
     while (i < mother->stack_length)
     {
-        if (mother->stack_a[i].is_full == 1)
-            ft_printf("%d", mother->stack_a[i].data);
-        if (mother->stack_b[i].is_full == 1)
-            ft_printf("%d", mother->stack_b[i].data);
+        if (i < mother->stack_a.len)
+            ft_printf("%d", mother->stack_a.data[i]);
+        else
+            ft_printf(" ");
+        ft_printf(" ");
+        if (i < mother->stack_b.len)
+            ft_printf("%d", mother->stack_b.data[i]);
+        else
+            ft_printf(" ");
         ft_printf("\n");
         i++;
     }
-    ft_printf("_ _\na b\n");
+    ft_printf("_ _\na b\n\n");
 }

@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:47:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/02 16:57:06 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/03 18:52:56 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,18 @@
 
 typedef struct s_stack
 {
-    int data;
-    int is_full;
+    int *data;
+    int max;
+    int min;
+    int len;
+    
 } t_stack;
 
 typedef struct s_general
 {
     int stack_length;
-    int stack_a_len;
-    int stack_b_len;
-    t_stack *stack_a;
-    t_stack *stack_b;
+    t_stack stack_a;
+    t_stack stack_b;
     char *op_string;
 } t_general;
 
@@ -39,11 +40,16 @@ void sa_operation(t_general *mother);
 void sb_operation(t_general *mother);
 void ss_operation(t_general *mother);
 void display_stacks(t_general *mother);
-void do_operation(t_general *mother, char *op);
 void ra_operation(t_general *mother);
 void rb_operation(t_general *mother);
 void rr_operation(t_general *mother);
 void rra_operation(t_general *mother);
 void rrb_operation(t_general *mother);
 void rrr_operation(t_general *mother);
+void pa_operation(t_general *mother);
+void pb_operation(t_general *mother);
+void less_than_three(t_general *mother);
+void less_than_five(t_general *mother);
+int is_sorted(t_stack *stack);
+void calculate_pos(t_stack *stack);
 
