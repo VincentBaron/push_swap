@@ -6,7 +6,7 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 16:18:27 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/05 12:32:18 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/08/05 12:40:38 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ void less_than_five(t_general *mother)
 {
     int turn;
     
+
+    if (is_sorted(&mother->stack_a))
+        return;
     pb_operation(mother);
     if (mother->stack_a.len == 4)
         pb_operation(mother);
@@ -58,7 +61,7 @@ void less_than_five(t_general *mother)
             ra_operation(mother);
             pa_operation(mother);
         }
-        if (mother->stack_b.len == 0)
+        if (mother->stack_b.len == 0 && !is_sorted(&mother->stack_a))
         {
             calculate_pos(&mother->stack_a);
             if (mother->stack_a.max < (mother->stack_a.len < 2))
