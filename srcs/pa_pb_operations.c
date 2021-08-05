@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pa_pb_operations.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:47:26 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/03 15:01:20 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/05 11:52:46 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,30 @@ void pa_operation(t_general *mother)
 
     mother->stack_a.len++;
     mother->stack_b.len--;
-    new_b = (int *)malloc(sizeof(int) * (mother->stack_a.len));
-    new_a = (int *)malloc(sizeof(int) * (mother->stack_b.len));
+    new_b = (int *)malloc(sizeof(int) * (mother->stack_b.len));
+    new_a = (int *)malloc(sizeof(int) * (mother->stack_a.len));
 
-    i = 0;
-    new_b[i] = mother->stack_b.data[i];
-    i++;
-    while (i < mother->stack_a.len)
-    {
-        new_b[i] = mother->stack_a.data[i - 1];
-        i++;
-    }
     i = 0;
     while (i < mother->stack_b.len)
     {
-        new_a[i] = mother->stack_b.data[i + 1];
+        new_b[i] = mother->stack_b.data[i + 1];
         i++;
     }
-    free(mother->stack_b.data);
+    new_a[0] = mother->stack_b.data[0];
+    i = 0;
+    while (i + 1 < mother->stack_a.len)
+    {
+        new_a[i + 1] = mother->stack_a.data[i];
+        i++;
+    }
+
+
     free(mother->stack_a.data);
-    mother->stack_b.data = new_a;
-    mother->stack_a.data = new_b;
+    free(mother->stack_b.data);
+    mother->stack_a.data = new_a;
+    mother->stack_b.data = new_b;
     display_stacks(mother);
+    mother->turn++;
 }
 
 void pb_operation(t_general *mother)
@@ -66,22 +68,24 @@ void pb_operation(t_general *mother)
     new_a = (int *)malloc(sizeof(int) * (mother->stack_a.len));
 
     i = 0;
-    new_b[i] = mother->stack_a.data[i];
-    i++;
-    while (i < mother->stack_b.len)
-    {
-        new_b[i] = mother->stack_b.data[i - 1];
-        i++;
-    }
-    i = 0;
     while (i < mother->stack_a.len)
     {
         new_a[i] = mother->stack_a.data[i + 1];
         i++;
     }
+    new_b[0] = mother->stack_a.data[0];
+    i = 0;
+    while (i + 1 < mother->stack_b.len)
+    {
+        new_b[i + 1] = mother->stack_b.data[i];
+        i++;
+    }
+
+
     free(mother->stack_a.data);
     free(mother->stack_b.data);
     mother->stack_a.data = new_a;
     mother->stack_b.data = new_b;
     display_stacks(mother);
+    mother->turn++;
 }

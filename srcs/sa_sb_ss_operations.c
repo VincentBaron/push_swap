@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sa_sb_ss_operations.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 14:19:28 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/03 15:30:46 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/05 11:53:15 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void sa_operation(t_general *mother)
     mother->stack_a.data[0] = mother->stack_a.data[1];
     mother->stack_a.data[1] = temp;
     display_stacks(mother);
+    mother->turn++;
 }
 
 void sb_operation(t_general *mother)
@@ -36,6 +37,7 @@ void sb_operation(t_general *mother)
     mother->stack_b.data[0] = mother->stack_b.data[1];
     mother->stack_b.data[1] = temp;
     display_stacks(mother);
+    mother->turn++;
 }
 
 void ss_operation(t_general *mother)

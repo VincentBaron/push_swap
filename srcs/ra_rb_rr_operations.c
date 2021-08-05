@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ra_rb_rr_operations.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:51:41 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/03 15:51:29 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/05 11:52:57 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void ra_operation(t_general *mother)
     }
     mother->stack_a.data[i] = first;
     display_stacks(mother);
+    mother->turn++;
 }
 
 void rb_operation(t_general *mother)
@@ -54,6 +55,7 @@ void rb_operation(t_general *mother)
     }
     mother->stack_b.data[i] = first;
     display_stacks(mother);
+    mother->turn++;
 }
 
 void rr_operation(t_general *mother)
