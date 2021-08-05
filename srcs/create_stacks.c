@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_stacks.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 14:16:35 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/03 14:56:31 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/05 12:09:31 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,9 @@ int create_stacks(t_general *mother, char **av)
 {
     int i;
     int j;
-
-    // for (int i = 0; av[i]; i++)
-    //     ft_putstr_fd(av[i], 1);
-
-    // mother->stack_a_head = mother->stack_a;
- 
-    mother->stack_a.data = (int *)malloc(sizeof(int) * (mother->stack_a.len + 1));
+    
     mother->stack_a.len = mother->stack_length;
+    mother->stack_a.data = (int *)malloc(sizeof(int) * (mother->stack_a.len + 1));
     mother->stack_b.len = 0;
     i = 1;
     j = 0;

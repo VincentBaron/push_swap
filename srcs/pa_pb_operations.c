@@ -6,7 +6,7 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:47:26 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/05 11:52:46 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/08/05 12:31:27 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void pa_operation(t_general *mother)
     int i;
 
 
-    ft_printf("pb\n\n");
+    ft_printf("pa\n\n");
     if (mother->stack_b.len <= 0)
         return;
 
@@ -41,10 +41,6 @@ void pa_operation(t_general *mother)
         new_a[i + 1] = mother->stack_a.data[i];
         i++;
     }
-
-
-    free(mother->stack_a.data);
-    free(mother->stack_b.data);
     mother->stack_a.data = new_a;
     mother->stack_b.data = new_b;
     display_stacks(mother);
@@ -80,10 +76,6 @@ void pb_operation(t_general *mother)
         new_b[i + 1] = mother->stack_b.data[i];
         i++;
     }
-
-
-    free(mother->stack_a.data);
-    free(mother->stack_b.data);
     mother->stack_a.data = new_a;
     mother->stack_b.data = new_b;
     display_stacks(mother);
