@@ -6,7 +6,7 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:47:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/05 12:11:14 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/08/06 16:14:56 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef struct s_stack
     int max;
     int min;
     int len;
+    int hold_first;
+    int hold_second;
     
 } t_stack;
 
@@ -35,6 +37,8 @@ typedef struct s_general
     int offset;
     char *op_string;
     int turn;
+    int *sorted_stack;
+    int elem_to_move;
 } t_general;
 
 int create_stacks(t_general *mother, char **av);
@@ -54,4 +58,7 @@ void less_than_three(t_general *mother);
 void less_than_five(t_general *mother);
 int is_sorted(t_stack *stack);
 void calculate_pos(t_stack *stack);
-
+void less_than_hundred(t_general *mother);
+void create_sorted_stack(t_general *mother);
+void push_chunk(t_general *mother);
+void find_holds(t_general *mother);

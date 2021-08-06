@@ -6,7 +6,7 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:34:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/05 12:11:11 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/08/06 12:14:26 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,6 @@ int main(int ac, char **av)
         less_than_three(&mother);
     else if (mother.stack_length <= 5)
         less_than_five(&mother);
+    else if (mother.stack_length <= 100)
+        less_than_hundred(&mother);
 }
