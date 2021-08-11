@@ -6,7 +6,7 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:47:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/06 16:14:56 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/08/11 10:36:34 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack
     int len;
     int hold_first;
     int hold_second;
+        int chunk;
     
 } t_stack;
 
