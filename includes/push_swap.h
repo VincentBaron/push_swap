@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:47:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/11 10:36:34 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/08/13 12:44:03 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_stack
     int len;
     int hold_first;
     int hold_second;
-        int chunk;
+    int chunks_five[5];
     
 } t_stack;
 
