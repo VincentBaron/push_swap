@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   less_than_five.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 16:18:27 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/05 14:41:08 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/08/13 11:47:48 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void less_than_five(t_general *mother)
             }
             else
             {
-                while (mother->stack_a.min <= mother->stack_a.len)
+                while (mother->stack_a.min < mother->stack_a.len)
                 {
                     rra_operation(mother);
                     mother->stack_a.min++;
@@ -52,7 +52,6 @@ void less_than_five(t_general *mother)
         less_than_three(mother);
         pa_operation(mother);
         pa_operation(mother);
-        mother->turn++;
         if (mother->turn > 15)
             break;
     }
