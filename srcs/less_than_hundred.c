@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 12:14:58 by vincentbaro       #+#    #+#             */
-/*   Updated: 2021/08/16 19:25:33 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/16 21:18:49 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,14 @@ void find_nearest_lowest(t_general *mother)
 
 void arrange_stack_b(t_general *mother)
 {
+    if (mother->stack_b.len == 2 && mother->stack_b.data[0] < mother->stack_b.data[1])
+        sb_operation(mother);
     find_nearest_lowest(mother);
+    if (mother->stack_b.nearest == -1)
+    {
+        calculate_pos(&(mother->stack_b));
+        mother->stack_b.nearest = mother->stack_b.min + 1;
+    }
     if (mother->stack_b.nearest < mother->stack_b.len / 2)
     {
         while (mother->stack_b.nearest > 0)

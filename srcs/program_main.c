@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:34:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/16 15:04:46 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/16 21:25:35 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,6 @@ int main(int ac, char **av)
     else if (mother.stack_length <= 500)
         more_than_five(&mother, 500);
     printf("no of turns: %d", mother.turn);
+    if (is_sorted(&(mother.stack_a)))
+        printf("\n\n\nSUCCESS!!!!!\n");
 }
