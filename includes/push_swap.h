@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:47:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/13 14:16:06 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/08/16 12:35:56 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void less_than_three(t_general *mother);
 void less_than_five(t_general *mother);
 int is_sorted(t_stack *stack);
 void calculate_pos(t_stack *stack);
-void less_than_hundred(t_general *mother);
+void more_than_five(t_general *mother, int size);
 void create_sorted_stack(t_general *mother);
-void push_chunk(t_general *mother);
+void push_chunk(t_general *mother, int size);
 void find_holds(t_general *mother, int chunk_top);

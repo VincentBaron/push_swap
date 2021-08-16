@@ -6,25 +6,36 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 12:14:58 by vincentbaro       #+#    #+#             */
-/*   Updated: 2021/08/16 12:27:32 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/16 12:38:20 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void create_chunks(t_general *mother)
+void create_chunks(t_general *mother, int size)
 {
     int i;
     int f;
 
     i = 1;
     f = 0;
-    while (i <= 5)
+    if (size == 100)
     {
-        mother->stack_a.chunks_five[f] = (mother->stack_length * i) / 5 - 1;
-        printf("chunks_5[%d]= %d", f, mother->stack_a.chunks_five[f]);
-        i++;
-        f++;
+        while (i <= 5)
+        {
+            mother->stack_a.chunks_five[f] = (mother->stack_length * i) / 5 - 1;
+            i++;
+            f++;
+        }
+    }
+    else if (size == 500)
+    {
+        while (i <= 11)
+        {
+            mother->stack_a.chunks_five[f] = (mother->stack_length * i) / 11 - 1;
+            i++;
+            f++;
+        }
     }
 }
 
@@ -109,14 +120,14 @@ void arrange_stack_b(t_general *mother)
     }
 }
 
-void push_chunk(t_general *mother)
+void push_chunk(t_general *mother, int size)
 {
     int i;
     int f;
     int chunk_top;
     int new_chunk_top;
 
-    create_chunks(mother);
+    create_chunks(mother, size);
     chunk_top = -1;
     i = 0;
     while (mother->stack_a.len > 0)
@@ -184,15 +195,8 @@ void create_sorted_stack(t_general *mother)
     }
 }
 
-void less_than_hundred(t_general *mother)
+void more_than_five(t_general *mother, int size)
 {
-    int i;
     create_sorted_stack(mother);
-    i = 0;
-    while (i < mother->stack_length)
-    {
-        printf("%d\n", mother->sorted_stack[i]);
-        i++;
-    }
-    push_chunk(mother);
+    push_chunk(mother, size);
 }
