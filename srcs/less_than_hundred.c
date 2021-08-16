@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 12:14:58 by vincentbaro       #+#    #+#             */
-/*   Updated: 2021/08/16 11:40:15 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/16 12:27:32 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,14 @@ void arrange_stack_b(t_general *mother)
     int offset;
 
     i = 0;
+    offset = 0;
     while (i < mother->stack_b.len)
     {
         if (mother->stack_a.data[0] > mother->stack_b.data[i])
+        {
             offset = i;
+            break;
+        }
         i++;
     }
     if (offset < mother->stack_b.len / 2)
@@ -144,6 +148,9 @@ void push_chunk(t_general *mother)
         else
             i++;
     }
+    order_stack_b(mother);
+    while (mother->stack_b.len > 0)
+        pa_operation(mother);
 }
 
 void create_sorted_stack(t_general *mother)
