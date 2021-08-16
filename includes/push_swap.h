@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:47:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/16 12:35:56 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/16 18:18:37 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ typedef struct s_stack
     int len;
     int hold_first;
     int hold_second;
-    int chunks_five[5];
-    
+    int *chunks;
+    int nearest;
 } t_stack;
 
 typedef struct s_general
