@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rra_rrb_rrr_operations.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 15:57:19 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/05 12:11:31 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/08/16 11:35:12 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void rrb_operation(t_general *mother)
     int temp;
 
 
-    ft_printf("rra\n\n");
+    ft_printf("rrb\n\n");
     if (mother->stack_b.len < 2)
         return;
     i = mother->stack_b.len - 1;

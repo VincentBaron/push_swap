@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   less_than_hundred.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 12:14:58 by vincentbaro       #+#    #+#             */
-/*   Updated: 2021/08/13 14:16:34 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/08/16 11:40:15 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void create_chunks(t_general *mother)
         mother->stack_a.chunks_five[f] = (mother->stack_length * i) / 5 - 1;
         printf("chunks_5[%d]= %d", f, mother->stack_a.chunks_five[f]);
         i++;
-        f++; 
+        f++;
     }
 }
 
@@ -54,17 +54,73 @@ void find_holds(t_general *mother, int chunk_top)
     }
 }
 
+void order_stack_b(t_general *mother)
+{
+    calculate_pos(&(mother->stack_b));
+    if (mother->stack_b.max < (mother->stack_b.len / 2))
+    {
+        while (mother->stack_b.max > 0)
+        {
+            rb_operation(mother);
+            mother->stack_b.max--;
+        }
+    }
+    else
+    {
+        while (mother->stack_b.max < mother->stack_b.len)
+        {
+            rrb_operation(mother);
+            mother->stack_b.max++;
+        }
+    }
+}
+
+void arrange_stack_b(t_general *mother)
+{
+    int i;
+    int offset;
+
+    i = 0;
+    while (i < mother->stack_b.len)
+    {
+        if (mother->stack_a.data[0] > mother->stack_b.data[i])
+            offset = i;
+        i++;
+    }
+    if (offset < mother->stack_b.len / 2)
+    {
+        while (offset > 0)
+        {
+            rb_operation(mother);
+            offset--;
+        }
+    }
+    else
+    {
+        while (offset < mother->stack_b.len)
+        {
+            rrb_operation(mother);
+            offset++;
+        }
+    }
+}
+
 void push_chunk(t_general *mother)
 {
     int i;
     int f;
     int chunk_top;
+    int new_chunk_top;
 
     create_chunks(mother);
+    chunk_top = -1;
     i = 0;
     while (mother->stack_a.len > 0)
     {
-        chunk_top = mother->sorted_stack[mother->stack_a.chunks_five[i]];
+        new_chunk_top = mother->sorted_stack[mother->stack_a.chunks_five[i]];
+        if (new_chunk_top != chunk_top)
+            order_stack_b(mother);
+        chunk_top = new_chunk_top;
         mother->stack_a.hold_first = -1;
         //printf("chunk max: %d\n\n", (mother->stack_length * mother->stack_a.chunk) / 5 - 1);
         find_holds(mother, chunk_top);
@@ -73,7 +129,6 @@ void push_chunk(t_general *mother)
             mother->elem_to_move = mother->stack_a.hold_second;
             if (mother->stack_a.hold_first <= (mother->stack_a.len - mother->stack_a.hold_second))
                 mother->elem_to_move = mother->stack_a.hold_first;
-            // arrange_stack_b(mother);
             f = 0;
             while (f < mother->elem_to_move)
             {
@@ -83,6 +138,7 @@ void push_chunk(t_general *mother)
                     rra_operation(mother);
                 f++;
             }
+            arrange_stack_b(mother);
             pb_operation(mother);
         }
         else

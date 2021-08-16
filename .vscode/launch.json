@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(lldb) Launch",
+            "name": "(lldb) Lancer",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/Users/vbaron/Desktop/push_swap_new/push_swap",
+            "program": "/Users/vbaron/Desktop/push_swap_clean/push_swap",
             "args": ["1", "12", "4", "6", "11", "18", "3", "34"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
