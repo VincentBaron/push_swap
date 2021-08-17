@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   program_main.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:34:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/17 18:45:12 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/17 21:35:21 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void init_vars(t_general *mother)
+void	init_vars(t_general *mother)
 {
 	mother->stack_b.len = -1;
 	mother->stack_b.max = -1;
@@ -26,11 +26,11 @@ void init_vars(t_general *mother)
 	mother->stack_a.hold_second = -1;
 }
 
-int check_args(char **av)
+int	check_args(char **av)
 {
-	int i;
-	int f;
-	int minus;
+	int	i;
+	int	f;
+	int	minus;
 
 	i = 1;
 	while (av[i])
@@ -52,15 +52,15 @@ int check_args(char **av)
 	return (1);
 }
 
-void error(void)
+void	error(void)
 {
 	printf("Error\n");
 	exit (-1);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	t_general mother;
+	t_general	mother;
 
 	if (ac < 2)
 		error();
