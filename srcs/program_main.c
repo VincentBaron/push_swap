@@ -43,8 +43,8 @@ int main(int ac, char **av)
     else if (mother.stack_length <= 500)
         more_than_five(&mother, 500);
     printf("no of turns: %d", mother.turn);
+    display_stacks(&mother);
     if (is_sorted(&(mother.stack_a)))
         printf("\n\n\nSUCCESS!!!!!\n");
-    free(mother.stack_a.chunks);
-    free(mother.sorted_stack);
+    free(mother.stack_a.data);
 }

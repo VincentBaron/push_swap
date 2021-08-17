@@ -14,12 +14,8 @@
 
 void update_stacks(t_general *mother, int *new_a, int *new_b)
 {
-    free(mother->stack_a.data);
-    free(mother->stack_b.data);
     mother->stack_a.data = new_a;
     mother->stack_b.data = new_b;
-    free(new_a);
-    free(new_b);
     mother->turn++;
 }
 
@@ -49,7 +45,13 @@ void pa_operation(t_general *mother)
         new_a[i + 1] = mother->stack_a.data[i];
         i++;
     }
+    if (mother->stack_a.len > 1)
+        free(mother->stack_a.data);
+    free(mother->stack_b.data);
     update_stacks(mother, new_a, new_b);
+    if (mother->stack_b.len == 0)
+        free(new_b);
+    // free(new_a);
 }
 
 void pb_operation(t_general *mother)
@@ -60,6 +62,7 @@ void pb_operation(t_general *mother)
 
     if (mother->stack_a.len <= 0)
         return;
+    // free(mother->stack_a);
     printf("pb\n");
     mother->stack_b.len++;
     mother->stack_a.len--;
@@ -78,5 +81,11 @@ void pb_operation(t_general *mother)
         new_b[i + 1] = mother->stack_b.data[i];
         i++;
     }
+    if (mother->stack_b.len > 1)
+        free(mother->stack_b.data);
+    free(mother->stack_a.data);
     update_stacks(mother, new_a, new_b);
+    if (mother->stack_a.len == 0)
+        free(new_a);
+    // free(new_b);
 }

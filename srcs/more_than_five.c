@@ -145,4 +145,6 @@ void more_than_five(t_general *mother, int size)
     order_stack_b(mother);
     while (mother->stack_b.len > 0)
         pa_operation(mother);
+    free(mother->stack_a.chunks);
+    free(mother->sorted_stack);
 }
