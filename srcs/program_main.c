@@ -6,13 +6,13 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:34:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/17 16:29:46 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/17 18:45:12 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	init_vars(t_general *mother)
+void init_vars(t_general *mother)
 {
 	mother->stack_b.len = -1;
 	mother->stack_b.max = -1;
@@ -26,11 +26,11 @@ void	init_vars(t_general *mother)
 	mother->stack_a.hold_second = -1;
 }
 
-int	check_args(char **av)
+int check_args(char **av)
 {
-	int	i;
-	int	f;
-	int	minus;
+	int i;
+	int f;
+	int minus;
 
 	i = 1;
 	while (av[i])
@@ -52,17 +52,20 @@ int	check_args(char **av)
 	return (1);
 }
 
-int	main(int ac, char **av)
+void error(void)
 {
-	t_general	mother;
+	printf("Error\n");
+	exit (-1);
+}
+
+int main(int ac, char **av)
+{
+	t_general mother;
 
 	if (ac < 2)
-		return (1);
+		error();
 	if (!check_args(av))
-	{
-		printf("Error\n");
-		return (1);
-	}
+		error();
 	init_vars(&mother);
 	mother.stack_length = ac - 1;
 	create_stacks(&mother, av);

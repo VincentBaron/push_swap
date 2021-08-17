@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:47:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/17 16:41:41 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/17 18:30:46 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ void	create_chunks(t_general *mother, int size);
 void	order_stack_b(t_general *mother);
 void	arrange_stack_b(t_general *mother);
 void	arrange_stack_a(t_general *mother);
+void	error(void);
 
 #endif
