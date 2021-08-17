@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:34:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/17 14:45:57 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/17 15:23:30 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,43 @@ void init_vars(t_general *mother)
     mother->stack_a.hold_second = -1;
 }
 
+int check_args(char **av)
+{
+    int i;
+    int f;
+    int minus;
+
+    i = 1;
+    while (av[i])
+    {
+        f = 0;
+        minus = 0;
+        while (av[i][f])
+        {
+            if ((av[i][f] < '0' || av[i][f] > '9') && av[i][f] != '-')
+                return (0);
+            if (av[i][f] == '-')
+                minus++;
+            f++;
+        }
+        if (minus > 1)
+            return (0);
+        i++;
+    }
+    return (1);
+}
+
 int main(int ac, char **av)
 {
     t_general mother;
 
     if (ac < 2)
         return (1);
+    if(!check_args(av))
+    {
+        printf("Error\n");
+        return (1);
+    }
     init_vars(&mother);
     mother.stack_length = ac - 1;
     create_stacks(&mother, av);
