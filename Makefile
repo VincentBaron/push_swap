@@ -6,7 +6,7 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/30 17:56:46 by vbaron            #+#    #+#              #
-#    Updated: 2021/08/17 15:18:41 by vbaron           ###   ########.fr        #
+#    Updated: 2021/08/17 15:58:43 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SOURCES = program_main.c \
 		calculate_pos.c \
 		less_than_five.c \
 		more_than_five.c \
+		arrange_stacks.c \
 
 		
 
