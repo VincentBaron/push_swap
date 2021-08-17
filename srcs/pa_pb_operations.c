@@ -3,14 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   pa_pb_operations.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:47:26 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/05 12:37:19 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/08/17 11:05:26 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void update_stacks(t_general *mother, int *new_a, int *new_b)
+{
+    mother->stack_a.data = new_a;
+    mother->stack_b.data = new_b;
+    mother->turn++;
+}
 
 void pa_operation(t_general *mother)
 {
@@ -18,15 +25,13 @@ void pa_operation(t_general *mother)
     int *new_b;
     int i;
 
-
     if (mother->stack_b.len <= 0)
         return;
-    ft_printf("pa\n\n");
+    ft_printf("pa\n");
     mother->stack_a.len++;
     mother->stack_b.len--;
     new_b = (int *)malloc(sizeof(int) * (mother->stack_b.len));
     new_a = (int *)malloc(sizeof(int) * (mother->stack_a.len));
-
     i = 0;
     while (i < mother->stack_b.len)
     {
@@ -40,10 +45,7 @@ void pa_operation(t_general *mother)
         new_a[i + 1] = mother->stack_a.data[i];
         i++;
     }
-    mother->stack_a.data = new_a;
-    mother->stack_b.data = new_b;
-    display_stacks(mother);
-    mother->turn++;
+    update_stacks(mother, new_a, new_b);
 }
 
 void pb_operation(t_general *mother)
@@ -52,15 +54,13 @@ void pb_operation(t_general *mother)
     int *new_b;
     int i;
 
-
     if (mother->stack_a.len <= 0)
         return;
-        ft_printf("pb\n\n");
+    ft_printf("pb\n");
     mother->stack_b.len++;
     mother->stack_a.len--;
     new_b = (int *)malloc(sizeof(int) * (mother->stack_b.len));
     new_a = (int *)malloc(sizeof(int) * (mother->stack_a.len));
-
     i = 0;
     while (i < mother->stack_a.len)
     {
@@ -74,8 +74,5 @@ void pb_operation(t_general *mother)
         new_b[i + 1] = mother->stack_b.data[i];
         i++;
     }
-    mother->stack_a.data = new_a;
-    mother->stack_b.data = new_b;
-    display_stacks(mother);
-    mother->turn++;
+    update_stacks(mother, new_a, new_b);
 }

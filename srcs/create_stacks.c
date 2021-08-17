@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_stacks.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 14:16:35 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/05 12:09:31 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/08/17 11:04:51 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,5 @@ int create_stacks(t_general *mother, char **av)
         j++;
         i++;
     }
-    ft_printf("_________________________________________\nInit a and b:\n");
-    display_stacks(mother);
     return (0);
 }

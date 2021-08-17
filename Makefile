@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+         #
+#    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/30 17:56:46 by vbaron            #+#    #+#              #
-#    Updated: 2021/08/06 12:14:51 by vincentbaro      ###   ########.fr        #
+#    Updated: 2021/08/17 10:45:38 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SOURCES = program_main.c \
 		utils.c \
 		calculate_pos.c \
 		less_than_five.c \
-		less_than_hundred.c \
+		more_than_five.c \
 
 		
 

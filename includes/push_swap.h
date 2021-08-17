@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:47:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/16 18:18:37 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/17 10:55:29 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,8 @@ int is_sorted(t_stack *stack);
 void calculate_pos(t_stack *stack);
 void more_than_five(t_general *mother, int size);
 void create_sorted_stack(t_general *mother);
-void push_chunk(t_general *mother, int size);
+void push_chunk(t_general *mother);
 void find_holds(t_general *mother, int chunk_top);
+void create_malloc(t_general *mother);
+void find_nearest_lowest(t_general *mother);
+void create_chunks(t_general *mother, int size);

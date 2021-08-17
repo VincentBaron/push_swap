@@ -6,21 +6,41 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 16:18:27 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/13 11:47:48 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/17 10:40:32 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 void calculate_offset(t_general *mother)
 {
     mother->offset = 0;
-        while (mother->stack_a.data[mother->offset])
+    while (mother->stack_a.data[mother->offset])
+    {
+        if (mother->stack_a.data[mother->offset] > mother->stack_b.data[0])
+            break;
+        mother->offset++;
+    }
+}
+
+void move_min_value(t_general *mother)
+{
+    if (mother->stack_a.min <= mother->stack_a.len / 2)
+    {
+        while (mother->stack_a.min > 0)
         {
-            if (mother->stack_a.data[mother->offset] > mother->stack_b.data[0])
-                break;
-            mother->offset++;
+            ra_operation(mother);
+            mother->stack_a.min--;
         }
+    }
+    else
+    {
+        while (mother->stack_a.min < mother->stack_a.len)
+        {
+            rra_operation(mother);
+            mother->stack_a.min++;
+        }
+    }
 }
 
 void less_than_five(t_general *mother)
@@ -30,30 +50,11 @@ void less_than_five(t_general *mother)
         while (mother->stack_a.len > 3)
         {
             calculate_pos(&mother->stack_a);
-            if (mother->stack_a.min <= mother->stack_a.len / 2)
-            {
-                while (mother->stack_a.min > 0)
-                {
-                    ra_operation(mother);
-                    mother->stack_a.min--;
-                }
-                
-            }
-            else
-            {
-                while (mother->stack_a.min < mother->stack_a.len)
-                {
-                    rra_operation(mother);
-                    mother->stack_a.min++;
-                }
-            }
+            move_min_value(mother);
             pb_operation(mother);
         }
         less_than_three(mother);
         pa_operation(mother);
         pa_operation(mother);
-        if (mother->turn > 15)
-            break;
     }
-    ft_printf("\nturns: %d", mother->turn);
 }

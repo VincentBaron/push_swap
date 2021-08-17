@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ra_rb_rr_operations.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:51:41 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/05 12:11:23 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/08/17 11:05:42 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ void ra_operation(t_general *mother)
     int first;
     int temp;
 
-
-    ft_printf("ra\n\n");
+    ft_printf("ra\n");
     if (mother->stack_a.len < 2)
         return;
     i = 0;
@@ -31,7 +30,6 @@ void ra_operation(t_general *mother)
         i++;
     }
     mother->stack_a.data[i] = first;
-    display_stacks(mother);
     mother->turn++;
 }
 
@@ -41,8 +39,7 @@ void rb_operation(t_general *mother)
     int first;
     int temp;
 
-
-    ft_printf("ra\n\n");
+    ft_printf("ra\n");
     if (mother->stack_b.len < 2)
         return;
     i = 0;
@@ -54,15 +51,12 @@ void rb_operation(t_general *mother)
         i++;
     }
     mother->stack_b.data[i] = first;
-    display_stacks(mother);
     mother->turn++;
 }
 
 void rr_operation(t_general *mother)
 {
-    
-    ft_printf("rr\n\n");
+    ft_printf("rr\n");
     ra_operation(mother);
     rb_operation(mother);
-    display_stacks(mother);
 }

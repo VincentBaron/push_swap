@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:34:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/16 21:25:35 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/17 10:28:03 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int main(int ac, char **av)
     t_general mother;
 
     init_vars(&mother);
-    mother.op_string = ft_substr("------------------------------------------------------\nExec ", 0, ft_strlen("\n------------------------------------------------------\n\nExec "));
     mother.stack_length = ac - 1;
     create_stacks(&mother, av);
     mother.turn = 0;
@@ -43,7 +42,7 @@ int main(int ac, char **av)
         more_than_five(&mother, 100);
     else if (mother.stack_length <= 500)
         more_than_five(&mother, 500);
-    printf("no of turns: %d", mother.turn);
+    ft_printf("no of turns: %d", mother.turn);
     if (is_sorted(&(mother.stack_a)))
-        printf("\n\n\nSUCCESS!!!!!\n");
+        ft_printf("\n\n\nSUCCESS!!!!!\n");
 }
