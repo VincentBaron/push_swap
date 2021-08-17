@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 14:19:28 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/17 11:06:06 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/17 11:35:00 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void sa_operation(t_general *mother)
 
     if (mother->stack_a.len < 2)
         return;
-    ft_printf("sa\n");
+    printf("sa\n");
     temp = mother->stack_a.data[0];
     mother->stack_a.data[0] = mother->stack_a.data[1];
     mother->stack_a.data[1] = temp;
@@ -31,7 +31,7 @@ void sb_operation(t_general *mother)
 
     if (mother->stack_b.len < 2)
         return;
-    ft_printf("sa\n");
+    printf("sa\n");
     temp = mother->stack_b.data[0];
     mother->stack_b.data[0] = mother->stack_b.data[1];
     mother->stack_b.data[1] = temp;
@@ -40,7 +40,7 @@ void sb_operation(t_general *mother)
 
 void ss_operation(t_general *mother)
 {
-    ft_printf("ss\n");
+    printf("ss\n");
     sa_operation(mother);
     sb_operation(mother);
 }

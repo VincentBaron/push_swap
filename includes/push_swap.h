@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:47:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/17 10:55:29 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/17 11:35:17 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include <unistd.h>
 # include "stdlib.h"
 #include "../libft/libft.h"
-
-#include "../printf/includes/printf.h"
 
 
 typedef struct s_stack

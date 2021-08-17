@@ -6,7 +6,7 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/30 17:56:46 by vbaron            #+#    #+#              #
-#    Updated: 2021/08/17 10:45:38 by vbaron           ###   ########.fr        #
+#    Updated: 2021/08/17 11:33:42 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,6 @@ SRCS = $(addprefix $(DIR_S)/,$(SOURCES))
 OBJS = $(addprefix $(DIR_O)/,$(SOURCES:.c=.o))
 HEADERS = headers
 LIBFT_DIR = libft
-PRINTF_DIR = printf
 
 NAME = push_swap
 
@@ -42,34 +41,28 @@ CFLAGS = -Wall -Wextra -Werror -g
 CC = gcc
 
 LIBFT = $(addprefix $(LIBFT_DIR)/,libft.a)
-PRINTF = $(addprefix $(PRINTF_DIR)/,printf.a)
 
-all: $(LIBFT) $(PRINTF) $(NAME)
+all: $(LIBFT) $(NAME)
 
 $(DIR_O)/%.o: $(DIR_S)/%.c
 	mkdir -p $(DIR_O)	
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-$(NAME): $(OBJS) $(LIBFT) $(PRINTF)
+$(NAME): $(OBJS) $(LIBFT)
 		$(CC) $(CFLAGS) $^ -o $@
 
 $(LIBFT):
 		 make -C $(LIBFT_DIR)
-
-$(PRINTF):
-		make -C $(PRINTF_DIR)
 
 clean:
 		rm -f $(OBJS)		
 	rm -f $(OBJS)/*.o
 	rm -rf $(DIR_O)	
 	make clean -C $(LIBFT_DIR)
-	make clean -C $(PRINTF_DIR)
 
 fclean: clean
 	rm -rf $(NAME)
 	make fclean -C $(LIBFT_DIR)
-	make fclean -C $(PRINTF_DIR)
 
 re: fclean all
 

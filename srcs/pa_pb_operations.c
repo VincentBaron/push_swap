@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:47:26 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/17 11:05:26 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/17 11:34:16 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void pa_operation(t_general *mother)
 
     if (mother->stack_b.len <= 0)
         return;
-    ft_printf("pa\n");
+    printf("pa\n");
     mother->stack_a.len++;
     mother->stack_b.len--;
     new_b = (int *)malloc(sizeof(int) * (mother->stack_b.len));
@@ -56,7 +56,7 @@ void pb_operation(t_general *mother)
 
     if (mother->stack_a.len <= 0)
         return;
-    ft_printf("pb\n");
+    printf("pb\n");
     mother->stack_b.len++;
     mother->stack_a.len--;
     new_b = (int *)malloc(sizeof(int) * (mother->stack_b.len));
