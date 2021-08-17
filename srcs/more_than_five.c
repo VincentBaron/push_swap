@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 12:14:58 by vincentbaro       #+#    #+#             */
-/*   Updated: 2021/08/17 10:59:59 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/17 14:31:11 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,4 +147,5 @@ void more_than_five(t_general *mother, int size)
         pa_operation(mother);
     free(mother->stack_a.chunks);
     free(mother->sorted_stack);
+    return ;
 }

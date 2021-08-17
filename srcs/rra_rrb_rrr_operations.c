@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 15:57:19 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/17 11:34:46 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/17 14:44:04 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void rra_operation(t_general *mother)
     int i;
     int last;
 
+    printf("rra\n");
     if (mother->stack_a.len < 2)
         return;
-    printf("rra\n");
     i = mother->stack_a.len - 1;
     last = mother->stack_a.data[mother->stack_a.len - 1];
     while (i > 0)
@@ -36,9 +36,9 @@ void rrb_operation(t_general *mother)
     int i;
     int last;
 
+    printf("rrb\n");
     if (mother->stack_b.len < 2)
         return;
-    printf("rrb\n");
     i = mother->stack_b.len - 1;
     last = mother->stack_b.data[mother->stack_b.len - 1];
     while (i > 0)

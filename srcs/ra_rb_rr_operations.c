@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:51:41 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/17 11:34:32 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/17 14:44:30 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void rb_operation(t_general *mother)
     int i;
     int first;
 
-    printf("ra\n");
+    printf("rb\n");
     if (mother->stack_b.len < 2)
         return;
     i = 0;
