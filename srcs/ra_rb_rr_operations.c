@@ -16,7 +16,6 @@ void ra_operation(t_general *mother)
 {
     int i;
     int first;
-    int temp;
 
     printf("ra\n");
     if (mother->stack_a.len < 2)
@@ -25,7 +24,6 @@ void ra_operation(t_general *mother)
     first = mother->stack_a.data[i];
     while (i + 1 < mother->stack_a.len)
     {
-        temp = mother->stack_a.data[i];
         mother->stack_a.data[i] = mother->stack_a.data[i + 1];
         i++;
     }
@@ -37,7 +35,6 @@ void rb_operation(t_general *mother)
 {
     int i;
     int first;
-    int temp;
 
     printf("ra\n");
     if (mother->stack_b.len < 2)
@@ -46,7 +43,6 @@ void rb_operation(t_general *mother)
     first = mother->stack_b.data[i];
     while (i + 1 < mother->stack_b.len)
     {
-        temp = mother->stack_b.data[i];
         mother->stack_b.data[i] = mother->stack_b.data[i + 1];
         i++;
     }

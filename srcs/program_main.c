@@ -45,4 +45,6 @@ int main(int ac, char **av)
     printf("no of turns: %d", mother.turn);
     if (is_sorted(&(mother.stack_a)))
         printf("\n\n\nSUCCESS!!!!!\n");
+    free(mother.stack_a.chunks);
+    free(mother.sorted_stack);
 }

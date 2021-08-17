@@ -62,7 +62,6 @@ SRC			=	ft_atoi.c    			\
 				ft_lstiter.c		\
 				ft_lstmap.c		\
 				ft_itoa_hex.c \
-				ft_itoa_uhex.c \
 				ft_putunbr_fd.c \
 				check_charset.c \
 

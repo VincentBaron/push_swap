@@ -14,8 +14,12 @@
 
 void update_stacks(t_general *mother, int *new_a, int *new_b)
 {
+    free(mother->stack_a.data);
+    free(mother->stack_b.data);
     mother->stack_a.data = new_a;
     mother->stack_b.data = new_b;
+    free(new_a);
+    free(new_b);
     mother->turn++;
 }
 
