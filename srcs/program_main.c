@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:34:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/19 14:47:47 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/19 15:59:31 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int	check_args(char **av)
 	i = 1;
 	while (av[i])
 	{
+		if (ft_strlen(av[i]) == 0)
+			return (0);
 		f = 0;
 		minus = 0;
 		while (av[i][f])
