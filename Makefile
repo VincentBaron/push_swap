@@ -37,7 +37,7 @@ LIBFT_DIR = libft
 
 NAME = push_swap
 
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 
 CC = gcc
 

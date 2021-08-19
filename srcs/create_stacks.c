@@ -47,10 +47,10 @@ int	create_stacks(t_general *mother, char **av)
 	j = 0;
 	while (i <= mother->stack_length)
 	{
-		mother->stack_a.data[j] = ft_atoi(av[i]);
-		if (mother->stack_a.data[j] > 2147483647
-			|| mother->stack_a.data[j] < -2147483648)
+		if (ft_atoi(av[i]) > 2147483647
+			|| ft_atoi(av[i]) < -2147483648)
 			error();
+		mother->stack_a.data[j] = ft_atoi(av[i]);
 		j++;
 		i++;
 	}
