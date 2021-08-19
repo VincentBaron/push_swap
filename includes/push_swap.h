@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:47:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/17 11:35:17 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/19 14:48:23 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,3 +64,4 @@ void find_holds(t_general *mother, int chunk_top);
 void create_malloc(t_general *mother);
 void find_nearest_lowest(t_general *mother);
 void create_chunks(t_general *mother, int size);
+void	error(void);

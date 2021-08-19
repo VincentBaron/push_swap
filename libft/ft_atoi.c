@@ -6,15 +6,15 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:10:31 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/04 19:13:23 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/19 15:00:37 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *nptr)
+long long	ft_atoi(const char *nptr)
 {
-	int		i;
-	int		nbr;
-	int		sign;
+	int				i;
+	long long		nbr;
+	int				sign;
 
 	i = 0;
 	nbr = 0;

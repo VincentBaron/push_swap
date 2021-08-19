@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:17:12 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/01 22:15:05 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/19 14:47:40 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
-int				ft_atoi(const char *nptr);
+long long		ft_atoi(const char *nptr);
 void			*ft_calloc(int nmemb, int size);
 char			*ft_strdup(const char *s);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
