@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 13:22:00 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/19 15:52:49 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/25 09:06:41 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	is_sorted(t_stack *stack)
 void	create_malloc(t_general *mother)
 {
 	mother->sorted_stack = (int *)malloc(sizeof(int) * mother->stack_a.len);
+	if (!mother->sorted_stack)
+		error();
 	if (!mother->sorted_stack)
 		return ;
 }
@@ -97,6 +99,8 @@ void	create_chunks(t_general *mother, int size)
 	else if (size == 500)
 		len = 11;
 	mother->stack_a.chunks = (int *)malloc(sizeof(int) * len);
+	if (!mother->stack_a.chunks)
+		error();
 	if (!mother->stack_a.chunks)
 		return ;
 	while (i <= len)

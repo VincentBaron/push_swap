@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 14:16:35 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/19 15:01:03 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/25 09:05:39 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	create_stacks(t_general *mother, char **av)
 	mother->stack_a.len = mother->stack_length;
 	mother->stack_a.data = (int *)malloc(sizeof(int)
 			* (mother->stack_a.len));
+	if (!mother->stack_a.data)
+		error();
 	mother->stack_b.len = 0;
 	i = 1;
 	j = 0;

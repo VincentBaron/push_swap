@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:47:26 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/19 15:46:36 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/08/25 09:04:39 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,11 @@ void	pa_operation(t_general *mother)
 	mother->stack_a.len++;
 	mother->stack_b.len--;
 	new_b = (int *)malloc(sizeof(int) * (mother->stack_b.len));
+	if (!new_b)
+		error();
 	new_a = (int *)malloc(sizeof(int) * (mother->stack_a.len));
+	if (!new_a)
+		error();
 	i = 0;
 	while (i < mother->stack_b.len)
 	{
@@ -80,7 +84,11 @@ void	pb_operation(t_general *mother)
 	mother->stack_b.len++;
 	mother->stack_a.len--;
 	new_b = (int *)malloc(sizeof(int) * (mother->stack_b.len));
+	if (!new_b)
+		error();
 	new_a = (int *)malloc(sizeof(int) * (mother->stack_a.len));
+	if (!new_a)
+		error();
 	i = 0;
 	while (i < mother->stack_a.len)
 	{
