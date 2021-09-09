@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   program_main.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:34:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/08/23 15:41:22 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/09/09 11:58:40 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ int	check_args(char **av)
 	i = 1;
 	while (av[i])
 	{
-		if (ft_strlen(av[i]) == 0)
-			return (0);
 		f = 0;
 		minus = 0;
 		while (av[i][f])
@@ -47,6 +45,8 @@ int	check_args(char **av)
 				minus++;
 			f++;
 		}
+		if ((minus == 1 && ft_strlen(av[i]) > 11) || (minus == 0 && ft_strlen(av[i]) > 10) || ft_strlen(av[i]) == 0)
+			return (0);
 		if (minus > 1)
 			return (0);
 		i++;
@@ -65,14 +65,17 @@ int	main(int ac, char **av)
 	t_general	mother;
 
 	if (ac < 2)
-		error();
+		return(0);
 	if (!check_args(av))
 		error();
 	init_vars(&mother);
 	mother.stack_length = ac - 1;
 	create_stacks(&mother, av);
 	if (is_sorted(&(mother.stack_a)))
-		return (0);
+	{
+		free(mother.stack_a.data);
+		return(0);
+	}
 	mother.turn = 0;
 	if (mother.stack_length <= 3)
 		less_than_three(&mother);
