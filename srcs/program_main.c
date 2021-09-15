@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   program_main.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:34:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/09/09 11:58:40 by user42           ###   ########.fr       */
+/*   Updated: 2021/09/15 12:15:26 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ int	check_args(char **av)
 				minus++;
 			f++;
 		}
-		if ((minus == 1 && ft_strlen(av[i]) > 11) || (minus == 0 && ft_strlen(av[i]) > 10) || ft_strlen(av[i]) == 0)
+		if ((minus == 1 && ft_strlen(av[i]) > 11) || (minus == 0
+				&& ft_strlen(av[i]) > 10) || ft_strlen(av[i]) == 0)
 			return (0);
 		if (minus > 1)
 			return (0);
@@ -65,7 +66,7 @@ int	main(int ac, char **av)
 	t_general	mother;
 
 	if (ac < 2)
-		return(0);
+		return (0);
 	if (!check_args(av))
 		error();
 	init_vars(&mother);
@@ -74,7 +75,7 @@ int	main(int ac, char **av)
 	if (is_sorted(&(mother.stack_a)))
 	{
 		free(mother.stack_a.data);
-		return(0);
+		return (0);
 	}
 	mother.turn = 0;
 	if (mother.stack_length <= 3)
